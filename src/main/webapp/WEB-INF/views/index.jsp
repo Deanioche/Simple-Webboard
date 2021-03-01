@@ -26,7 +26,7 @@
         <jsp:include page="${display }" />
     </c:if>
     <c:if test="${empty display }">
-        <h3>저희 홈페이지를 방문해주셔서 감사합니다. <br>
+        <h3>Welcome!! <br>
             Have a nice day!!
         </h3>
         <i class="far fa-kiss-wink-heart btn-page"></i>
