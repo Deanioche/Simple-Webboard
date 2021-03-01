@@ -1,0 +1,16 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+h1 {
+    font-size: initial;
+}
+
+i {
+    font-size: 100px;
+}
+
+.btn-page {
+    color: aquamarine;
+}
