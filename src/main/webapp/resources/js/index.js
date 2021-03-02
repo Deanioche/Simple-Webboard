@@ -38,6 +38,7 @@ document.querySelectorAll("h1")[0].oncopy = function (){
     document.querySelectorAll("h1")[0].style.color = "red";
     document.querySelectorAll("h1")[0].innerText = "copy 했어????"
 }
+/*
 
 fetch("/page", {
     method: "post"
@@ -50,6 +51,32 @@ fetch("/page", {
 }).catch(excResp => {
     console.log(excResp)
 })
+*/
+
+
+var coronaURL =  "https://cors-anywhere.herokuapp.com/https://api.corona-19.kr/korea/?serviceKey=ed947cd870a3993a29b294501793a0de2";
+
+document.querySelector("input[value='btn']").onclick = function () {
+    console.log("start");
+    fetch('abc').then(function (response) {
+
+        if(response.status == '404'){
+            alert('Not found');
+            return;
+        }
+
+        response.text().then(function (text) {
+            document.querySelector(".note").innerHTML = text;
+          })
+    })
+
+    console.log(1);
+    console.log(2);
+    console.log(3);
+}
+
+
+/*
 
 $.ajax({
     type : 'post',
@@ -69,3 +96,35 @@ $.ajax({
     }
 
 });
+*/
+//
+// const axios = require('axios');
+
+// ID로 사용자 요청
+axios.get(coronaURL)
+    // 응답(성공)
+    .then(function (response) {
+        console.log("#### response : " + response);
+        console.log(response.status);
+        console.log(response.text());
+
+    })
+    // 응답(실패)
+    .catch(function (error) {
+        console.log("#### error : " + error);
+    })
+    // 응답(항상 실행)
+    .then(function () {
+        // ...
+    });
+
+
+// 원격 이미지 GET 요청
+axios({
+    method: 'get',
+    url: 'http://bit.ly/2mTM3nY',
+    responseType: 'stream'
+})
+    .then(function (response) {
+        response.data.pipe(fs.createWriteStream('ada_lovelace.jpg'))
+    });

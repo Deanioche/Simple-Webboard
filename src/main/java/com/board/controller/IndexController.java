@@ -20,11 +20,11 @@ public class IndexController {
     }
 
 
-    @RequestMapping(value="/page", method=RequestMethod.POST)
+    @RequestMapping(value="/page", method=RequestMethod.GET)
     @ResponseBody
     public void page(Model model) {
 
-        model.addAttribute("display", "page.jsp");
+        model.addAttribute("display", "/page 실행");
     }
 }
 

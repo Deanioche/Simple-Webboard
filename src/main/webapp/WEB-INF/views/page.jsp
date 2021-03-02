@@ -7,4 +7,6 @@
         </h3>
         <i class="far fa-kiss-wink-heart btn-page"></i>
 
+    <div class="note"></div>
+
 </section>
