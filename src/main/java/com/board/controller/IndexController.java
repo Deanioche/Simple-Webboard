@@ -14,17 +14,16 @@ public class IndexController {
     @RequestMapping("/")
     public String index(Model model) {
         model.addAttribute("display", "page.jsp");
-        System.out.println("display : " + model.getAttribute("display"));
 
         return "index";
     }
 
 
     @RequestMapping(value="page", method=RequestMethod.GET)
-    @ResponseBody
     public void page(Model model) {
+        model.addAttribute("display", "/page initiated");
+        System.out.println("page : " + model.getAttribute("display"));
 
-        model.addAttribute("display", "/page 실행");
     }
 }
 

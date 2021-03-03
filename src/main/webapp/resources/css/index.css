@@ -14,3 +14,9 @@ i {
 .btn-page {
     color: aquamarine;
 }
+
+.note {
+
+    border: 1px solid salmon;
+    margin: 5px;
+}
