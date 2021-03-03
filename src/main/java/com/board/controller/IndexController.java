@@ -20,6 +20,7 @@ public class IndexController {
 
 
     @RequestMapping(value="page", method=RequestMethod.GET)
+    @ResponseBody
     public void page(Model model) {
         model.addAttribute("display", "/page initiated");
         System.out.println("page : " + model.getAttribute("display"));

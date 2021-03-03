@@ -146,7 +146,6 @@ axios.get('/resources/corona.json')
         console.log(response.data);
         console.log("statusText : " + response.statusText);
 
-
     })
     // 응답(실패)
     .catch(function (error) {

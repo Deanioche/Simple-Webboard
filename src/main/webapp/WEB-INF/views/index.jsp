@@ -25,13 +25,11 @@
 
     <nav-bar>
         <ul class="nav-links">
-            <li><a class="btn" href="#">Login</a></li>
+            <li><a class="btn btn-login" href="#">Login</a></li>
             <li><a class="btn" href="#">Register</a></li>
             <li><a class="btn" href="#">Board</a></li>
             <li><a class="btn" href="#">Post</a></li>
-            <li><a class="btn" href="#">Post</a></li>
-            <li><a class="btn" href="#">Post</a></li>
-            <li><a class="btn" href="#">Post</a></li>
+            <li><a class="btn corona" href="#">Corona</a></li>
         </ul>
         <div class="burger btn">
             <div class="line1"></div>
@@ -43,34 +41,35 @@
 
 </header>
 
+<div class="login-panel">
+    <div class="times-sign"><p class="btn">&times;</p></div>
+    <div class="content">
+        <div class="input-panel">
+            <input type="text" placeholder="id">
+            <input type="password" placeholder="pwd">
+        </div>
+        <div class="btn-panel">
+            <input type="button" value="Register" class="btn">
+            <input type="button" value="Login" class="btn">
+        </div>
+    </div>
+    <a href="#" class="btn">find password..</a>
+</div>
+
 <main>
     <section>
-        <article class="pic">
-            Pic
-        </article>
         <article class="text">
-            Text
-        </article>
-        <article>
-            article
-        </article>
-        <article>
-            article
-        </article>
-        <article>
-            article
-        </article>
-        <article>
-            article
-        </article>
 
+            <h1>Main</h1>
+            <p class="lorem80">😉</p>
+
+        </article>
     </section>
-
 </main>
 
 <footer>footer</footer>
-<%--
 
+<%--
 <c:if test="${not empty display }">
     <jsp:include page="${display }"/>
 </c:if>

@@ -31,6 +31,7 @@ header {
     align-items: center;
     min-height: 9vh;
     background-color: lightseagreen;
+    z-index: 999 !important;
 }
 
 logo {
@@ -113,7 +114,7 @@ nav-bar a {
 
     .nav-links {
         position: fixed;
-        right: 0px;
+        right: 0;
         height: 92vh;
         top: 9vh;
         background-color: lightseagreen;
@@ -167,6 +168,132 @@ nav-bar a {
 }
 
 
+
+/*****************************************************************
+    login-panel Elements
+******************************************************************/
+
+.login-panel {
+    position: absolute;
+    background: lightseagreen;
+    width: 300px;
+    right: 0;
+    top: 9vh;
+    transform: translateY(-100%);
+    transition: transform 0.5s;
+}
+
+.login-panel.active {
+    transform: translateY(0%);
+}
+
+.login-panel .times-sign {
+    width: 100%;
+    height: 30px;
+}
+
+.login-panel .times-sign p {
+    float: right;
+    margin-right: 1vw;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+}
+
+.login-panel .content {
+    display: flex;
+    margin: 0 1vw 0 1vw;
+}
+
+.login-panel .input-panel input {
+    margin: 1vw 0 0 0;
+    border: none;
+    height: 25px;
+    width: 15vw;
+    padding: 0 5px 0 5px;
+}
+
+.login-panel .btn-panel input {
+    margin: 1vw 0 0 1vw;
+    border: none;
+    height: 25px;
+    width: 70px;
+    background: none;
+    outline: none;
+    color: white;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.login-panel a {
+    display: inline-block;
+    position: relative;
+    margin: 5px 0 5px 13px;
+    text-decoration: none;
+    color: white;
+}
+
+@media screen and (max-width: 1024px) {
+    .login-panel {
+        width: 100%;
+    }
+
+    .login-panel .content {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .login-panel .input-panel {
+        display: flex;
+        justify-content: space-evenly;
+        width: 70%;
+    }
+
+    .login-panel .input-panel input{
+        width: 40%;
+    }
+
+    .login-panel .btn-panel {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: row-reverse;
+        width: 30%;
+    }
+
+    .login-panel a {
+        margin-left: 5.5%;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+    .login-panel .input-panel {
+        display: flex;
+        flex-direction: column;
+        margin-left: 10vw;
+    }
+
+    .login-panel .input-panel input {
+        width: 80%;
+    }
+
+    .login-panel .btn-panel {
+        display: flex;
+        flex-direction: column-reverse;
+        width: 30%;
+    }
+
+    .login-panel a {
+        margin-left: 10.5%;
+    }
+
+    .login-panel .content {
+        height: 50%;
+    }
+
+}
+
+
 /*****************************************************************
     Semantic Elements
 ******************************************************************/
@@ -194,27 +321,24 @@ section {
     background: #fff;
     width: 100%;
     height: 100%;
-    display: table;
+    display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 50px;
 }
 
 article {
-    display: table-cell ;
-    border: 2px solid salmon;
+    border: 5px solid salmon;
     border-radius: 10px;
-    margin: 20px;
-}
-
-article:nth-child(2) {
-    display: table-row;
-    border: 2px solid salmon;
-}
-
-.pic {
+    width: 100%;
+    height: 90%;
+    margin: 5vw;
 
 }
 
 .text {
+    height: 80%;
+    min-height: 300px;
+    padding: 3vw;
+    overflow-y: scroll;
+    word-break: break-word;
 }
