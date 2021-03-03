@@ -101,12 +101,16 @@ $.ajax({
 // const axios = require('axios');
 
 // ID로 사용자 요청
-axios.get(coronaURL)
+axios.get('/resources/corona.json')
     // 응답(성공)
     .then(function (response) {
         console.log("#### response : " + response);
         console.log(response.status);
-        console.log(response.text());
+        console.log(response.data);
+        console.log("statusText : " + response.statusText);
+        console.log("headers : " + response.headers);
+        console.log("request : " + response.request);
+
 
     })
     // 응답(실패)
@@ -116,15 +120,4 @@ axios.get(coronaURL)
     // 응답(항상 실행)
     .then(function () {
         // ...
-    });
-
-
-// 원격 이미지 GET 요청
-axios({
-    method: 'get',
-    url: 'http://bit.ly/2mTM3nY',
-    responseType: 'stream'
-})
-    .then(function (response) {
-        response.data.pipe(fs.createWriteStream('ada_lovelace.jpg'))
     });

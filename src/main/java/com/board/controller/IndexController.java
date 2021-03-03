@@ -20,7 +20,7 @@ public class IndexController {
     }
 
 
-    @RequestMapping(value="/page", method=RequestMethod.GET)
+    @RequestMapping(value="page", method=RequestMethod.GET)
     @ResponseBody
     public void page(Model model) {
 
