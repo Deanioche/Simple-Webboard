@@ -18,9 +18,58 @@
 </head>
 <body>
 
-<h1 class="btn-page"> # 현재 페이지 : ${display} </h1>
+<header>
 
-<hr>
+    <logo class="btn"><i class="far fa-kiss-wink-heart"></i>
+        <h1>Logo</h1></logo>
+
+    <nav-bar>
+        <ul class="nav-links">
+            <li><a class="btn" href="#">Login</a></li>
+            <li><a class="btn" href="#">Register</a></li>
+            <li><a class="btn" href="#">Board</a></li>
+            <li><a class="btn" href="#">Post</a></li>
+            <li><a class="btn" href="#">Post</a></li>
+            <li><a class="btn" href="#">Post</a></li>
+            <li><a class="btn" href="#">Post</a></li>
+        </ul>
+        <div class="burger btn">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+
+    </nav-bar>
+
+</header>
+
+<main>
+    <section>
+        <article class="pic">
+            Pic
+        </article>
+        <article class="text">
+            Text
+        </article>
+        <article>
+            article
+        </article>
+        <article>
+            article
+        </article>
+        <article>
+            article
+        </article>
+        <article>
+            article
+        </article>
+
+    </section>
+
+</main>
+
+<footer>footer</footer>
+<%--
 
 <c:if test="${not empty display }">
     <jsp:include page="${display }"/>
@@ -30,8 +79,8 @@
     </h3>
     <i class="far fa-kiss-wink-heart btn-page"></i>
 </c:if>
+--%>
 
-<input type="button" value="btn">
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="js/index.js"></script>
 </body>

@@ -1,22 +1,220 @@
 * {
     margin: 0px;
     padding: 0px;
+    box-sizing: border-box;
 }
 
-h1 {
-    font-size: initial;
+/*****************************************************************
+    Common Elements
+******************************************************************/
+
+.btn {
+    cursor: pointer;
+    transition: 0.5s;
 }
 
-i {
-    font-size: 100px;
+.btn:hover {
+    filter: invert(100%);
 }
 
-.btn-page {
-    color: aquamarine;
+
+/*****************************************************************
+    Header Elements
+******************************************************************/
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 9vh;
+    background-color: lightseagreen;
 }
 
-.note {
+logo {
+    color: rgb(226, 226, 226);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 20px;
+    display: flex;
+    margin-left: 100px;
+}
 
-    border: 1px solid salmon;
+logo i {
+    font-size: 30px;
+}
+
+logo h1 {
+    font-size: 20px;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+nav-bar {
+    width: 50%;
+    margin-right: 50px;
+    transition: 0.5s;
+}
+
+nav-bar ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+nav-bar li {
+    list-style: none;
+
+}
+
+nav-bar a {
+    text-decoration: none;
+    color: white;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.burger {
+    display: none;
+    position: relative;
+    right: -100%;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: rgb(226, 226, 226);
     margin: 5px;
+    transition: all 0.3s ease;
+}
+
+/*브라우저 너비가 1024px보다 작아지면 동작*/
+@media screen and (max-width: 1024px) {
+    nav-bar {
+        width: 70%;
+    }
+
+    logo {
+        margin-left: 50px;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    logo {
+        margin-left: 30px;
+    }
+
+    .nav-links {
+        position: fixed;
+        right: 0px;
+        height: 92vh;
+        top: 9vh;
+        background-color: lightseagreen;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 40%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in-out;
+    }
+
+    nav-bar li {
+        opacity: 0;
+    }
+
+    .burger {
+        display: block;
+
+    }
+
+}
+
+.nav-active {
+    transform: translateX(0%);
+}
+
+
+/* 애니메이션 생성 index.js에서 활성화 */
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* 햄버거에서 x로 transform */
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+    opacity: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+
+/*****************************************************************
+    Semantic Elements
+******************************************************************/
+
+
+footer {
+    background: #add8e685;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 200px;
+}
+
+main {
+    background: lightgray;
+    width: 100%;
+    height: 91vh;
+    display: flex;
+    flex-flow: row;
+    margin-top: 9vh;
+}
+
+section {
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    display: table;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+}
+
+article {
+    display: table-cell ;
+    border: 2px solid salmon;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+article:nth-child(2) {
+    display: table-row;
+    border: 2px solid salmon;
+}
+
+.pic {
+
+}
+
+.text {
 }
