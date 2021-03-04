@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+html {
+    overflow-x: hidden;
+}
+
 /*****************************************************************
     Common Elements
 ******************************************************************/
@@ -209,7 +213,7 @@ nav-bar a {
     margin: 1vw 0 0 0;
     border: none;
     height: 25px;
-    width: 15vw;
+    width: 12vw;
     padding: 0 5px 0 5px;
 }
 
@@ -228,7 +232,7 @@ nav-bar a {
 .login-panel a {
     display: inline-block;
     position: relative;
-    margin: 5px 0 5px 13px;
+    margin: 10px 0 10px 15px;
     text-decoration: none;
     color: white;
 }
@@ -293,6 +297,124 @@ nav-bar a {
 
 }
 
+/*****************************************************************
+    login-panel Elements
+******************************************************************/
+
+.register-panel {
+    position: absolute;
+    background: lightseagreen;
+    right: 0;
+    top: 9vh;
+    transform: translateY(-100%);
+    transition: transform 0.5s;
+}
+
+.register-panel.active {
+    transform: translateY(0%);
+}
+
+.register-panel .times-sign {
+    width: 100%;
+    height: 30px;
+}
+
+.register-panel .times-sign p {
+    float: right;
+    margin-right: 1vw;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+}
+
+.register-panel .content {
+    margin: 1vw 1vw 0 1vw;
+}
+
+.register-panel .input-panel {
+    display: grid;
+    grid-template-columns: 1fr
+}
+
+.register-panel .input-panel div {
+    display: flex;
+}
+
+.register-panel .input-panel div p {
+    width: 90px;
+    margin-top: 5px;
+}
+
+.register-panel .input-panel input {
+    margin: 5px 0 5px 5px;
+    padding: 5px;
+    border: none;
+    outline: none;
+    height: 25px;
+    width: 20vw;
+}
+
+.register-panel .btn-panel {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 10px 10px 0;
+
+}
+
+.register-panel .btn-panel input {
+    border: none;
+    height: 25px;
+    width: 70px;
+    background: none;
+    outline: none;
+    color: white;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.register-panel p {
+    display: inline-block;
+    position: relative;
+    color: white;
+}
+
+@media screen and (max-width: 1024px) {
+
+    .register-panel {
+        width: 100%;
+    }
+    .register-panel .input-panel {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .register-panel .input-panel input {
+        margin: 5px 20px 5px 5px;
+        padding: 5px;
+        border: none;
+        outline: none;
+        height: 25px;
+        width: 70%;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+
+    .register-panel .content {
+        padding: 0 0 0 10px;
+    }
+
+    .register-panel .input-panel {
+        grid-template-columns: 1fr;
+    }
+
+    .register-panel .input-panel input {
+        margin: 5px 0px 5px 5px;
+        padding: 5px;
+        width: 80%;
+    }
+}
+
 
 /*****************************************************************
     Semantic Elements
@@ -311,7 +433,6 @@ footer {
 main {
     background: lightgray;
     width: 100%;
-    height: 91vh;
     display: flex;
     flex-flow: row;
     margin-top: 9vh;
@@ -330,15 +451,46 @@ article {
     border: 5px solid salmon;
     border-radius: 10px;
     width: 100%;
-    height: 90%;
     margin: 5vw;
-
+    height: 70vh;
 }
 
 .text {
-    height: 80%;
+
     min-height: 300px;
     padding: 3vw;
     overflow-y: scroll;
-    word-break: break-word;
+    overflow-x: auto;
+
+}
+
+.menu {
+    width: 30%;
+    min-height: 300px;
+    padding: 3vw;
+    margin-left: 0;
+}
+
+@media screen and (max-width: 768px) {
+
+    section {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .text, .menu {
+        padding: 3vw;
+        height: 75vh;
+        width: 85%;
+        margin: 50px 0 0 0;
+        overflow-y: scroll;
+        overflow-x: auto;
+    }
+
+    .menu {
+        margin-bottom: 50px;
+    }
+
 }

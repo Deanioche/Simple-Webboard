@@ -1,5 +1,4 @@
 const nav = document.querySelector(".nav-links");
-const loginPanel = document.querySelector(".login-panel");
 const burger = document.querySelector(".burger");
 
 function navSlide() {
@@ -36,7 +35,6 @@ fetch('/resources/lorem80.txt').then(function (data) {
 
 
 //page 요청
-
 document.querySelector(".corona").onclick = () => {
     axios.get('/resources/corona.json')
         // 응답(성공)
@@ -54,9 +52,70 @@ document.querySelector(".corona").onclick = () => {
 
 }
 
-//login 창 열림
+/*****************************************************************
+    Login & Register
+ ******************************************************************/
 
-document.querySelector(".btn-login").onclick = () => {
+//login 창 열림
+const loginPanel = document.querySelector(".login-panel");
+
+document.querySelector(".btn-open-login").onclick = () => {
     loginPanel.classList.toggle("active");
     burger.click();
 }
+
+//register 창 열림
+const regiPanel = document.querySelector(".register-panel");
+
+document.querySelector(".btn-open-register").onclick = () => {
+    regiPanel.classList.toggle("active");
+    burger.click();
+}
+
+// 창 닫힘 버튼
+document.querySelectorAll(".btn-close").forEach(function (item){
+    item.onclick = () => {
+        loginPanel.classList.remove("active");
+        regiPanel.classList.remove("active");
+    }
+})
+
+// Register
+document.querySelector(".btn-register").onclick = function (){
+
+    var input = document.querySelectorAll(".register-panel .input-panel input");
+
+    //index 0 : Email
+    //index 1 : Nickname
+    //index 2 : Pwd
+    //index 3 : Confirm
+    var array = [];
+    input.forEach(function (item, index) {
+
+        switch (index){
+            case 0: array.push({email: item.value}); break;
+            case 1: array.push({nickname: item.value}); break;
+            case 2: array.push({password: item.value}); break;
+        }
+    })
+
+    console.log(array);
+
+    axios({
+        method: 'post',
+        url: "/register",
+        data: array
+    })
+    .then(function (response){
+        console.log(response);
+    })
+    .catch(function (error){
+        console.log(error);
+    })
+
+}
+
+
+
+
+

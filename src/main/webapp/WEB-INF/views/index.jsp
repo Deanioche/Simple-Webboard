@@ -25,8 +25,8 @@
 
     <nav-bar>
         <ul class="nav-links">
-            <li><a class="btn btn-login" href="#">Login</a></li>
-            <li><a class="btn" href="#">Register</a></li>
+            <li><a class="btn btn-open-login" href="#">Login</a></li>
+            <li><a class="btn btn-open-register" href="#">Register</a></li>
             <li><a class="btn" href="#">Board</a></li>
             <li><a class="btn" href="#">Post</a></li>
             <li><a class="btn corona" href="#">Corona</a></li>
@@ -42,7 +42,7 @@
 </header>
 
 <div class="login-panel">
-    <div class="times-sign"><p class="btn">&times;</p></div>
+    <div class="times-sign"><p class="btn-close btn">&times;</p></div>
     <div class="content">
         <div class="input-panel">
             <input type="text" placeholder="id">
@@ -53,7 +53,23 @@
             <input type="button" value="Login" class="btn">
         </div>
     </div>
-    <a href="#" class="btn">find password..</a>
+    <a href="#" class="btn">Forgot password..</a>
+</div>
+
+<div class="register-panel">
+    <div class="times-sign"><p class="btn-close btn">&times;</p></div>
+    <div class="content">
+        <div class="input-panel">
+            <div><p>Email</p><input type="text" placeholder="Email"></div>
+            <div><p>Nickname</p><input type="text" placeholder="Nickname"></div>
+            <div><p>Password</p><input type="password" placeholder="Password"></div>
+            <div><p>Confirm</p><input type="password" placeholder="Confirm"></div>
+        </div>
+        <div class="btn-panel">
+            <p href="#" class="btn">Forgot password..</p>
+            <input type="button" value="Register" class="btn-register btn">
+        </div>
+    </div>
 </div>
 
 <main>
@@ -61,13 +77,21 @@
         <article class="text">
 
             <h1>Main</h1>
+            <hr>
             <p class="lorem80">😉</p>
+
+        </article>
+        <article class="menu">
+
+            <h1>Menu</h1>
+            <hr>
+            <br>
 
         </article>
     </section>
 </main>
 
-<footer>footer</footer>
+<footer># Simple WebBoard</footer>
 
 <%--
 <c:if test="${not empty display }">
