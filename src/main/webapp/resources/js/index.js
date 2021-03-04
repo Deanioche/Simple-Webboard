@@ -89,22 +89,33 @@ document.querySelector(".btn-register").onclick = function (){
     //index 1 : Nickname
     //index 2 : Pwd
     //index 3 : Confirm
-    var array = [];
+
+    var email = '';
+    var nickname = '';
+    var pwd = '';
+
     input.forEach(function (item, index) {
 
         switch (index){
-            case 0: array.push({email: item.value}); break;
-            case 1: array.push({nickname: item.value}); break;
-            case 2: array.push({password: item.value}); break;
+            case 0: email = item.value; break;
+            case 1: nickname = item.value; break;
+            case 2: pwd = item.value; break;
         }
     })
 
-    console.log(array);
+        console.log((email));
+        console.log((nickname));
+        console.log(pwd);
 
     axios({
         method: 'post',
         url: "/register",
-        data: array
+        data: {
+            'email': email,
+            'nickname': nickname,
+            'password': pwd
+        },
+        dataType: 'text'
     })
     .then(function (response){
         console.log(response);

@@ -29,10 +29,12 @@ public class IndexController {
 
     @RequestMapping(value="register", method=RequestMethod.POST)
     @ResponseBody
-    public void register(@RequestParam Map<String, String> map) {
-        System.out.println("register");
-        System.out.println("nick : " + map.get("email"));
-        //System.out.println("nick : " + member.getNickname());
+    public void register(@ModelAttribute("member") Member member) {
+        System.out.println("register2");
+       // System.out.println("nick : " + map.get("email"));
+        System.out.println("nick : " + member.getNickname());
+        System.out.println("pwd : " + member.getPassword());
+        System.out.println("email : " + member.getEmail());
     }
 }
 
