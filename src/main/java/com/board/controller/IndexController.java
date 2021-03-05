@@ -29,7 +29,7 @@ public class IndexController {
 
     @RequestMapping(value="register", method=RequestMethod.POST)
     @ResponseBody
-    public void register(@ModelAttribute("member") Member member) {
+    public void register(@RequestBody Member member) {
         System.out.println("register2");
        // System.out.println("nick : " + map.get("email"));
         System.out.println("nick : " + member.getNickname());

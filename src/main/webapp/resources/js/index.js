@@ -115,7 +115,7 @@ document.querySelector(".btn-register").onclick = function (){
             'nickname': nickname,
             'password': pwd
         },
-        dataType: 'text'
+        dataType: 'json'
     })
     .then(function (response){
         console.log(response);
