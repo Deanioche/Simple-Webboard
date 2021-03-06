@@ -22,12 +22,19 @@ public class IndexController {
     @RequestMapping("/")
     public String index(Model model) {
         model.addAttribute("display", "page.jsp");
-        System.out.println("index count : " + count + "번째 실행");
-        indexService.initiateServer();
-        count++;
 
         return "index";
     }
+
+    @RequestMapping("/init")
+    @ResponseBody
+    public void initiateServer() {
+        System.out.println("index count : " + count + "번째 실행");
+        indexService.initiateServer();
+        count++;
+    }
+
+
 
 
     @RequestMapping(value="page", method=RequestMethod.GET)
@@ -44,7 +51,6 @@ public class IndexController {
         System.out.println("nick : " + member.getNickname());
         System.out.println("pwd : " + member.getPassword());
         System.out.println("email : " + member.getEmail());
-        indexService.initiateServer();
 
     }
 

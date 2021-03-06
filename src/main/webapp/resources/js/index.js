@@ -1,3 +1,22 @@
+window.onload = () => {
+
+    axios.get('/init')
+        // 응답(성공)
+        .then(function (response) {
+            console.log("# init success : " + response);
+        })
+        // 응답(실패)
+        .catch(function (error) {
+            console.log("# init error : " + error);
+        })
+        // 응답(항상 실행)
+        .then(function () {
+            // ...
+        });
+
+}
+
+
 // 반응형웹 햄버거 버튼 동작
 
 const burger = document.querySelector(".burger");
