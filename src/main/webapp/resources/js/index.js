@@ -1,8 +1,10 @@
-const nav = document.querySelector(".nav-links");
+// 반응형웹 햄버거 버튼 동작
+
 const burger = document.querySelector(".burger");
 
 function navSlide() {
     const navLinks = document.querySelectorAll(".nav-links li");
+    const nav = document.querySelector(".nav-links");
 
     burger.addEventListener("click", () => {
         //Toggle Nav
@@ -85,11 +87,6 @@ document.querySelector(".btn-register").onclick = function (){
 
     var input = document.querySelectorAll(".register-panel .input-panel input");
 
-    //index 0 : Email
-    //index 1 : Nickname
-    //index 2 : Pwd
-    //index 3 : Confirm
-
     var email = '';
     var nickname = '';
     var pwd = '';
@@ -107,14 +104,16 @@ document.querySelector(".btn-register").onclick = function (){
         console.log((nickname));
         console.log(pwd);
 
-    axios({
-        method: 'post',
-        url: "/register",
-        data: {
+        var array = {
             'email': email,
             'nickname': nickname,
             'password': pwd
-        },
+        }
+
+    axios({
+        method: 'post',
+        url: "/register",
+        data: array,
         dataType: 'json'
     })
     .then(function (response){
