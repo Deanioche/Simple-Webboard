@@ -79,16 +79,24 @@ document.querySelector(".corona").onclick = () => {
 const loginPanel = document.querySelector(".login-panel");
 
 document.querySelector(".btn-open-login").onclick = () => {
+    regiPanel.classList.remove("active");
     loginPanel.classList.toggle("active");
-    burger.click();
+
+    if(burger.classList.contains("toggle")){
+        burger.click();
+    }
 }
 
 //register 창 열림
 const regiPanel = document.querySelector(".register-panel");
 
 document.querySelector(".btn-open-register").onclick = () => {
+    loginPanel.classList.remove("active");
     regiPanel.classList.toggle("active");
-    burger.click();
+
+    if(burger.classList.contains("toggle")){
+       burger.click();
+    }
 }
 
 // 창 닫힘 버튼
