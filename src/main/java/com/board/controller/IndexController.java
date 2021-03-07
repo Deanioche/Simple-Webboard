@@ -22,7 +22,7 @@ public class IndexController {
     @RequestMapping("/")
     public String index(Model model) {
         model.addAttribute("display", "page.jsp");
-
+        indexService.initiateServer();
         return "index";
     }
 
