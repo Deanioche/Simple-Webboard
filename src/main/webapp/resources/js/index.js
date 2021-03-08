@@ -108,13 +108,11 @@ document.querySelectorAll(".btn-close").forEach(function (item){
 })
 
 // Register
+const input = document.querySelectorAll(".register-panel .input-panel input");
+
 document.querySelector(".btn-register").onclick = function (){
 
-    var input = document.querySelectorAll(".register-panel .input-panel input");
-
-    var email = '';
-    var nickname = '';
-    var pwd = '';
+    var email = '', nickname = '', pwd = '';
 
     input.forEach(function (item, index) {
 
@@ -123,26 +121,24 @@ document.querySelector(".btn-register").onclick = function (){
             case 1: nickname = item.value; break;
             case 2: pwd = item.value; break;
         }
+
     })
 
-        console.log((email));
-        console.log((nickname));
-        console.log(pwd);
-
-        var array = {
-            'email': email,
-            'nickname': nickname,
-            'password': pwd
-        }
+    var regi_data = {
+        'email': email,
+        'nickname': nickname,
+        'password': pwd
+    }
 
     axios({
         method: 'post',
-        url: "/register",
-        data: array,
+        url: "/user/register",
+        data: regi_data,
         dataType: 'json'
     })
     .then(function (response){
         console.log(response);
+        console.log(response.data);
     })
     .catch(function (error){
         console.log(error);

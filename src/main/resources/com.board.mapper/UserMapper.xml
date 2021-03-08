@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 여기서 매퍼 네임스페이스는 인터페이스 파일로 받아와야 함 -->
+
+<mapper namespace="com.board.mapper.UserMapper">
+
+	<!--  회원가입-->
+	<!-- id email nickname password registration_date last_login -->
+	<insert id="register" parameterType="com.board.model.User">
+		insert into SIMPLE_USER
+		values( default, #{email}, #{nickname}, #{password}, default , default )
+	</insert>
+
+	<!-- 로그인 -->
+	<update id="login" parameterType="user">
+		update SIMPLE_USER set last_login = sysdate where EMAIL like '%'||#{email}||'%'
+	</update>
+
+</mapper>

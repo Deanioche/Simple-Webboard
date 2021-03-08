@@ -1,8 +1,7 @@
 package com.board.controller;
 
-import com.board.model.Member;
+import com.board.model.User;
 import com.board.service.IndexService;
-import com.board.service.IndexServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,7 +24,7 @@ public class IndexController {
         return "index";
     }
 
-    @RequestMapping(value="init", method=RequestMethod.GET)
+    @RequestMapping(value = "init", method = RequestMethod.GET)
     @ResponseBody
     public void initiateServer() {
         System.out.println("index count : " + count + "번째 실행");
@@ -33,30 +32,11 @@ public class IndexController {
         count++;
     }
 
-    @RequestMapping(value="page", method=RequestMethod.GET)
+    @RequestMapping(value = "page", method = RequestMethod.GET)
     @ResponseBody
     public void page(Model model) {
         model.addAttribute("display", "/page initiated");
         System.out.println("page : " + model.getAttribute("display"));
     }
-
-    @RequestMapping(value="register", method=RequestMethod.POST)
-    @ResponseBody
-    public void register(@RequestBody Member member) {
-        // System.out.println("nick : " + map.get("email"));
-        System.out.println("nick : " + member.getNickname());
-        System.out.println("pwd : " + member.getPassword());
-        System.out.println("email : " + member.getEmail());
-
-    }
-
-    @RequestMapping(value="login", method=RequestMethod.GET)
-    @ResponseBody
-    public void login(@RequestBody Map<String, String> map) {
-        System.out.println("nick : " + map.get("nickname"));
-        System.out.println("pwd : " + map.get("password"));
-        System.out.println("email : " + map.get("email"));
-    }
 }
-
 

@@ -1,15 +1,14 @@
 package com.board.model;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.ToString;
 import org.springframework.stereotype.Component;
 
 @Data
 @Component
-public class Member {
+@ToString
+public class User {
     String email;
     String nickname;
     String password;
-    String dummy;
 }

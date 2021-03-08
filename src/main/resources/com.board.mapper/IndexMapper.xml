@@ -8,8 +8,8 @@
  	<!-- Interface로 설정해야 된다는 점이 중요합니다. 파일 반환형, 파라미터, 이름은 xml mapper에서 쓴 걸 그대로 
 		사용해야 함 또한 interface이기 때문에 내부 구현은 하지 않아도 되 는게 아닌 안 해야 함 -->
 
+	<!--index 페이지 로딩 횟수-->
 	<update id="initiateServer">
 		update server set start_count = start_count + 1 where SERVER_NAME = 'simple'
 	</update>
-
 </mapper>

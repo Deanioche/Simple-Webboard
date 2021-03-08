@@ -7,7 +7,7 @@
 
     <!-- dto 별칭설정해줌 -->
     <typeAliases>
-        <typeAlias alias="member" type="com.board.model.Member"/>
+        <typeAlias alias="user" type="com.board.model.User"/>
 
     </typeAliases>
 
