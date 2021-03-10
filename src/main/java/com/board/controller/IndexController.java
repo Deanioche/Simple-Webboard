@@ -26,10 +26,11 @@ public class IndexController {
 
     @RequestMapping(value = "init", method = RequestMethod.GET)
     @ResponseBody
-    public void initiateServer() {
-        System.out.println("index count : " + count + "번째 실행");
-        indexService.initiateServer();
-        count++;
+    public int initiateServer(@RequestBody String str) {
+
+        System.out.println(str);
+        //indexService.initiateServer();
+        return 1;
     }
 
     @RequestMapping(value = "page", method = RequestMethod.GET)

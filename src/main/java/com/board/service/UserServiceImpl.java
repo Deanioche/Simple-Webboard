@@ -1,6 +1,5 @@
 package com.board.service;
 
-import com.board.mapper.IndexMapper;
 import com.board.mapper.UserMapper;
 import com.board.model.User;
 import lombok.AllArgsConstructor;
@@ -13,13 +12,11 @@ public class UserServiceImpl implements UserService {
     private UserMapper userMapper;
 
     @Override
-    public void register(User user) {
+    public String register(User user) {
 
-        System.out.println(user);
+        System.out.println("UserServiceImpl.register : " + user);
 
-        int su = userMapper.register(user);
-
-        System.out.println("su : " + su);
+        return userMapper.register(user) == 1 ? "성공" : "실패";
 
     }
 

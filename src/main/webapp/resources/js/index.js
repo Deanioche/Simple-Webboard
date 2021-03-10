@@ -1,13 +1,14 @@
 window.onload = function (){
 
-    console.log("# init");
-
     axios({
         method: 'get',
         url: "/init",
+        data: '아잉',
+        dataType: 'json'
     })
         .then(function (response){
             console.log("# init success : " + response);
+            console.log(response.data);
         })
         .catch(function (error){
             console.log("# init error : " + error);
@@ -124,19 +125,11 @@ document.querySelector(".btn-register").onclick = function (){
 
     })
 
-    input.forEach(function (item) {
-
-        item.value = "";
-
-    })
-
     var regi_data = {
         'email': email,
         'nickname': nickname,
         'password': pwd
     }
-
-
 
     axios({
         method: 'post',
@@ -145,11 +138,17 @@ document.querySelector(".btn-register").onclick = function (){
         dataType: 'json'
     })
     .then(function (response){
-        console.log(response);
         console.log(response.data);
+        alert("회원가입 성공");
+
+        // input 초기화
+        input.forEach(function (item) { item.value = ""; });
+        regiPanel.classList.remove("active");
+
     })
     .catch(function (error){
         console.log(error);
+        alert("회원가입 실패");
     })
 
 }

@@ -64,6 +64,8 @@ insert into server values('simple', '0');
 
 update server set start_count = start_count + 1 where SERVER_NAME = 'simple';
 
+select start_count from server where SERVER_NAME = 'simple';
+
 select * from server;
 commit;
 

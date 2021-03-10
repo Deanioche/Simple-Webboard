@@ -21,9 +21,8 @@ public class UserController {
     @RequestMapping(value="/register", method=RequestMethod.POST)
     @ResponseBody
     public String register(@RequestBody User user) {
-        userService.register(user);
 
-        return "데이터";
+        return userService.register(user);
     }
 
     @RequestMapping(value="/login", method=RequestMethod.GET)

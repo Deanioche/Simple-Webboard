@@ -11,10 +11,10 @@ public class IndexServiceImpl implements IndexService {
     private IndexMapper indexMapper;
 
     @Override
-    public void initiateServer() {
+    public int initiateServer() {
 
-        int su = indexMapper.initiateServer();
+        indexMapper.initiateServer();
 
-        System.out.println("su : " + su);
+        return indexMapper.print_server_count();
     }
 }
