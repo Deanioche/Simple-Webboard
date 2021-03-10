@@ -124,11 +124,19 @@ document.querySelector(".btn-register").onclick = function (){
 
     })
 
+    input.forEach(function (item) {
+
+        item.value = "";
+
+    })
+
     var regi_data = {
         'email': email,
         'nickname': nickname,
         'password': pwd
     }
+
+
 
     axios({
         method: 'post',
