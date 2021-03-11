@@ -24,13 +24,14 @@ public class IndexController {
         return "index";
     }
 
-    @RequestMapping(value = "init", method = RequestMethod.GET)
+    //@RequestParam(value = "str", required = false, defaultValue = "0")
+    @RequestMapping(value = "init", method = RequestMethod.POST)
     @ResponseBody
     public int initiateServer(@RequestBody String str) {
 
-        System.out.println(str);
+        System.out.println("str : " + str);
         //indexService.initiateServer();
-        return 1;
+        return 2;
     }
 
     @RequestMapping(value = "page", method = RequestMethod.GET)

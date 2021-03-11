@@ -1,7 +1,7 @@
 window.onload = function (){
 
     axios({
-        method: 'get',
+        method: 'post',
         url: "/init",
         data: '아잉',
         dataType: 'json'
