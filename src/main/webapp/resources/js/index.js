@@ -1,10 +1,12 @@
 window.onload = function (){
 
+        var str123 = "아 이게 되네";
+
     axios({
         method: 'post',
         url: "/init",
-        data: '아잉',
-        dataType: 'json'
+        data: 'str123=' + str123,
+        dataType: 'text'
     })
         .then(function (response){
             console.log("# init success : " + response);
