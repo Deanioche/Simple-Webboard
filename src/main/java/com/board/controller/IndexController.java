@@ -30,7 +30,8 @@ public class IndexController {
     public int initiateServer(@RequestParam String str123) {
 
         System.out.println("str123 : " + str123);
-        //indexService.initiateServer();
+        System.out.println("indexService.initiateServer() : " + indexService.initiateServer());
+
         return 2;
     }
 

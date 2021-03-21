@@ -13,8 +13,11 @@ public class IndexServiceImpl implements IndexService {
     @Override
     public int initiateServer() {
 
+        System.out.println("되라1");
         indexMapper.initiateServer();
-
-        return indexMapper.print_server_count();
+        System.out.println("되라2");
+        indexMapper.print_server_count();
+        System.out.println("되라3");
+        return 0;
     }
 }
