@@ -69,6 +69,8 @@ select start_count from server where SERVER_NAME = 'simple';
 select * from server;
 commit;
 
+select nvl(count(*), 0) from member where email like '%gmail%';
+
 
 /***  SIMPLE_USER ***/
 
@@ -84,5 +86,3 @@ update SIMPLE_USER set last_login = sysdate where EMAIL like '%simple@ruu.kr%';
 
 select * from SIMPLE_USER;
 commit;
-
-

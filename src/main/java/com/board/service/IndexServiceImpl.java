@@ -12,12 +12,8 @@ public class IndexServiceImpl implements IndexService {
 
     @Override
     public int initiateServer() {
-
-        System.out.println("되라1");
-        indexMapper.initiateServer();
-        System.out.println("되라2");
-        indexMapper.print_server_count();
-        System.out.println("되라3");
-        return 0;
+        System.out.println("init : " + (indexMapper.initiateServer() == 1? "성공" : "실패"));
+        return indexMapper.print_server_count();
     }
+
 }

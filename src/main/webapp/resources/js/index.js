@@ -1,16 +1,17 @@
 window.onload = function (){
 
-        var str123 = "아 이게 되네";
+        var init_data = "단일 텍스트 전송 실험";
 
     axios({
         method: 'post',
         url: "/init",
-        data: 'str123=' + str123,
+        data: 'init_data=' + init_data,
         dataType: 'text'
     })
         .then(function (response){
-            console.log("# init success : " + response);
-            console.log(response.data);
+            console.log("# init success : " + response.data);
+            console.log(response);
+            document.querySelector("footer p").append(response.data);
         })
         .catch(function (error){
             console.log("# init error : " + error);

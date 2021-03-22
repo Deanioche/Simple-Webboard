@@ -91,7 +91,7 @@
     </section>
 </main>
 
-<footer># Simple WebBoard</footer>
+<footer><p># Simple WebBoard</p></footer>
 
 <%--
 <c:if test="${not empty display }">

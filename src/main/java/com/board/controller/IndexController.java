@@ -27,12 +27,11 @@ public class IndexController {
     //@RequestParam(value = "str", required = false, defaultValue = "0")
     @RequestMapping(value = "/init", method = RequestMethod.POST)
     @ResponseBody
-    public int initiateServer(@RequestParam String str123) {
+    public int initiateServer(@RequestParam String init_data) {
 
-        System.out.println("str123 : " + str123);
-        System.out.println("indexService.initiateServer() : " + indexService.initiateServer());
+        System.out.println("init_data : " + init_data);
 
-        return 2;
+        return indexService.initiateServer();
     }
 
     @RequestMapping(value = "page", method = RequestMethod.GET)

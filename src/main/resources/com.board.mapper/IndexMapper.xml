@@ -13,7 +13,7 @@
 		update server set start_count = start_count + 1 where SERVER_NAME = 'simple'
 	</update>
 
-	<select id="print_start_count" resultType="int">
+	<select id="print_server_count" resultType="int">
 		select start_count from server where SERVER_NAME = 'simple'
 	</select>
 </mapper>
