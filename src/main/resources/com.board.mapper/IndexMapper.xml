@@ -10,10 +10,10 @@
 
 	<!--index 페이지 로딩 횟수 추가 -->
 	<update id="initiateServer">
-		update server set start_count = start_count + 1 where SERVER_NAME = 'simple'
+		update webboard_db.server set start_count = start_count + 1 where SERVER_NAME = 'simple'
 	</update>
 
 	<select id="print_server_count" resultType="int">
-		select start_count from server where SERVER_NAME = 'simple'
+		select start_count from webboard_db.server where SERVER_NAME = 'simple'
 	</select>
 </mapper>

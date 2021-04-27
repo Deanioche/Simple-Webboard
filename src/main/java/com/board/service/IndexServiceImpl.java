@@ -1,6 +1,7 @@
 package com.board.service;
 
 import com.board.mapper.IndexMapper;
+
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +13,8 @@ public class IndexServiceImpl implements IndexService {
 
     @Override
     public int initiateServer() {
+
+        System.out.println("initiateServer 실행 시도");
         System.out.println("init : " + (indexMapper.initiateServer() == 1? "성공" : "실패"));
         return indexMapper.print_server_count();
     }

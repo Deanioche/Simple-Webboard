@@ -9,13 +9,13 @@
 	<!--  회원가입-->
 	<!-- id email nickname password registration_date last_login -->
 	<insert id="register" parameterType="com.board.model.User">
-		insert into SIMPLE_USER
-		values( default, #{email}, #{nickname}, #{password}, default , default )
+		insert into webboard_db.SIMPLE_USER
+		values( (SELECT webboard_db.nextval('seq') FROM DUAL), #{email}, #{nickname}, #{password}, default , default )
 	</insert>
 
 	<!-- 로그인 -->
 	<update id="login" parameterType="user">
-		update SIMPLE_USER set last_login = sysdate where EMAIL like '%'||#{email}||'%'
+		update webboard_db.SIMPLE_USER set last_login = now() where EMAIL like '%'||#{email}||'%'
 	</update>
 
 </mapper>

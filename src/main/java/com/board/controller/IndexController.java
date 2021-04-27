@@ -1,13 +1,10 @@
 package com.board.controller;
 
-import com.board.model.User;
 import com.board.service.IndexService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.Map;
 
 @Controller
 public class IndexController {
@@ -30,7 +27,6 @@ public class IndexController {
     public int initiateServer(@RequestParam String init_data) {
 
         System.out.println("init_data : " + init_data);
-
         return indexService.initiateServer();
     }
 
