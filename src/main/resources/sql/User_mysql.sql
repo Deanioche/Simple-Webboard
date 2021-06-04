@@ -2,6 +2,18 @@
 CREATE DATABASE webboard_db;
 use webboard_db;
 
+CREATE TABLE IF NOT EXISTS `test_db`.`배우` (
+                                              `배우번호` INT NOT NULL,
+                                              `생년월일` date NULL,
+                                              `이름` VARCHAR(45) NULL,
+                                              `성별` VARCHAR(10) Check(`성별` in('남', '여')) NULL,
+                                              `출생지` VARCHAR(45) NULL,
+                                              `키` Double NULL,
+                                              `몸무게` Double NULL,
+                                              `혈액형` VARCHAR(45) Check(`혈액형` in('A', 'B', 'AB', 'O')) NULL,
+                                              PRIMARY KEY (`배우번호`))
+    ENGINE = InnoDB;
+
 
 -- 시퀀스를 사용할 테이블 생성
 CREATE TABLE SEQUENCES
